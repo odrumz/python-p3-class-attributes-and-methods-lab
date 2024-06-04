@@ -1,22 +1,19 @@
 class Song:
     
     count = 0
-    genres = [] #empty list/array
+    genres = [] 
     artists = []
-    genre_count = {} #empty bject
+    genre_count = {} 
     artist_count = {}
 
     def __init__(self, name, artist, genre):
         self.name = name
         self.artist = artist
         self.genre = genre
-# ninety_nine_problems = Song("99 Problems", "Jay-Z", "Rap")
-# print(ninety_nine_problems.name)
-# print(ninety_nine_problems.artist)
-# print(ninety_nine_problems.genre)
 
-        Song.count += 1  # Incrases count when a new song is created
-        #  if statements Adds the logged data to the list if it's unique
+
+        Song.count += 1  
+        
         if genre not in Song.genres:
             Song.genres.append(genre)
 
@@ -34,10 +31,10 @@ class Song:
         else:
             Song.artist_count[artist] = 1
 
-    @classmethod #using a decorator so as to not repeat attributes
+    @classmethod 
     def add_song_to_count(cls):
         cls.count += 1
-    #the if statements are made so repetition cannot be made
+  
     @classmethod
     def add_to_genres(cls, genre):
         if genre not in cls.genres:
